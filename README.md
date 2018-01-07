@@ -24,7 +24,16 @@ Like their biological counterparts, snake-like robots periodically undulate thei
 <p align="center">
   <em> Fig.3 CPG network </em>
 </p>
-In Fig.3, an arrow represents a connection having the mathematics description of the Kuramoto oscillator. The symbol written on an arrow denotes the phase lag of this connection. A circle is a CPG associated with the joint which name written in it. 
+In Fig.3, an arrow represents a connection having the mathematics description of the Kuramoto oscillator. The symbol written on an arrow denotes the phase lag of this connection. A circle is a CPG associated with the joint which name written in it.
+
+## Calculate robot's direction of motion
+The direction of lateral undulation gait is the symmetrical line of snakes' body. Using this idea, I calculate the direction of my robot motion by finding the symmetrical line of the sets of center of mass (COM) of my robot's links. This symmetrical line can be found using the SVD on the matrix P defined below.
+<p align="center"> 
+  <img src="https://latex.codecogs.com/gif.latex?P&space;=&space;\begin{bmatrix}&space;x_1&space;-&space;\overline{x}&space;&&space;y_1&space;-&space;\overline{y}&space;\\&space;x_2&space;-&space;\overline{x}&space;&&space;y_2&space;-&space;\overline{y}&space;\\&space;\vdots&space;&&space;\vdots&space;\\&space;x_{N&plus;1}&space;-&space;\overline{x}&space;&&space;y_{N&plus;1}&space;-&space;\overline{y}&space;\\&space;\end{bmatrix}">
+</p>
+<p>
+  In matrix P, <img src="https://latex.codecogs.com/gif.latex?(x_i,&space;y_i)"> denotes the coordinate of COM of link i, and <img src="https://latex.codecogs.com/gif.latex?(\overline{x},&space;\overline{y})"> is the mean of the set of all links' COM. All the coordinates presented in matrix P are computed relative to the robot first link because this calculation is based only on robot internal information which is the angular position of robot's joints. Such calculation can be carried out using Denavit-Hartenberg convention. 
+</p>
 
 #### Note:
 
