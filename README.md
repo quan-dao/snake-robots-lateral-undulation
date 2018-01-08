@@ -49,7 +49,7 @@ Robot crawling direciton can be steered by chaning the symmetrical line of the w
 </p>
 <p>The reason I used this method is the Linear-Time Invariant (LTI) relationsip between the control signal (<img src="https://latex.codecogs.com/gif.latex?\Delta&space;A">) and robot turning angle [4,5]. </p>
 
-## Control scheme
+## Direction control scheme
 At this point, I have derived the solution for the first 3 sub problems displayed in Fig.1, so I am going to integrate them into a control scheme to completely solve the direction control problem of snake robots' Lateral Undulation gait. This control scheme is shown in Fig.4.
 <p align="center"> 
   <img src="https://i.imgur.com/9vSG9R5.png?1">
@@ -58,6 +58,30 @@ At this point, I have derived the solution for the first 3 sub problems displaye
   <em> Fig.4 Direction control scheme </em>
 </p>
 The significace of this control scheme is that it can abstract snake-like robots which have many degrees of freedom as a SISO system. This help us to steer snake robots as easy as steer a differential-drive wheeled vehicle. 
+
+## Performance of direction control scheme
+The performance of the direction control scheme is demonstrated in the line following problem described by Fig.5.
+<p align="center">
+  <img src="https://i.imgur.com/qdFp6SP.png?3">
+</p>
+<p align="center">
+  <em> Fig.5 Line following problem </em>
+</p>
+The robot progress of following the desired trajectory (the purple line) is shown in Fig.6.
+<p align="center">
+  <img src="https://i.imgur.com/swegPkW.png?1">
+</p>
+<p align="center">
+  <em> Fig.6 Robot line following progress </em>
+</p>
+The evolution of the reference and actual value of robot crawling direction during this progress are respectively represented by the dash green and the solid blue line in Fig.7. In addition, the solid purple line in this figure denotes the value of the direction of robot head link (i.e. the first link). It can be seen that the purple and the green line are relatively match, which means the head of robot was being pointed toward the direction which robot was heading for. 
+<p align="center">
+  <img src="https://i.imgur.com/K6bMCzY.png?1">
+</p>
+<p align="center">
+  <em> Fig.7 Robot line following performance </em>
+</p>
+  
 
 #### References
 [1] Amphibot 1
