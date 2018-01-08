@@ -57,7 +57,13 @@ At this point, I have derived the solution for the first 3 sub problems displaye
 <p align="center">
   <em> Fig.4 Direction control scheme </em>
 </p>
-The significace of this control scheme is that it can abstract snake-like robots which have many degrees of freedom as a SISO system. This help us to steer snake robots as easy as steer a differential-drive wheeled vehicle. 
+The Direction controller is a simple proportional controller as the equation below because of the LTI relationship mentioned in the previous section.
+<p align="center">
+  <img src="https://latex.codecogs.com/gif.latex?\Delta&space;A&space;=&space;K_P&space;\(\gamma_{VC}&space;-&space;\gamma_{ref}&space;\)">
+</p>
+<p>
+  In this equation, <img src="https://latex.codecogs.com/gif.latex?\gamma_{VC},\gamma_{ref}"> are respectively the actual and the reference value of robot crawling direction. The significace of this control scheme is that it can abstract snake-like robots which have many degrees of freedom as a SISO system. This help us to steer snake robots as easy as steer a differential-drive wheeled vehicle.
+</p>
 
 ## Performance of direction control scheme
 The performance of the direction control scheme is demonstrated in the line following problem described by Fig.5.
@@ -76,7 +82,7 @@ The robot progress of following the desired trajectory (the purple line) is show
 </p>
 The evolution of the reference and actual value of robot crawling direction during this progress are respectively represented by the dash green and the solid blue line in Fig.7. In addition, the solid purple line in this figure denotes the value of the direction of robot head link (i.e. the first link). It can be seen that the purple and the green line are relatively match, which means the head of robot was being pointed toward the direction which robot was heading for. 
 <p align="center">
-  <img src="https://i.imgur.com/K6bMCzY.png?1">
+  <img src="https://i.imgur.com/no2Hqj1.png?1">
 </p>
 <p align="center">
   <em> Fig.7 Robot line following performance </em>
@@ -84,18 +90,18 @@ The evolution of the reference and actual value of robot crawling direction duri
   
 
 #### References
-[1] Amphibot 1
+[1] A. Crespi, A. Badertscher, A. Guignard, and A. J. Ijspeert, “AmphiBotI: An amphibious snake-like robot,”Robotics and Autonomous Systems,vol. 50, no. 4, pp. 163–175, 2005.
 
-[2] Amphibot 2
+[2] A. J. Ijspeert and A. Crespi, “Online trajectory generation in anamphibious snake robot using a lamprey-like central pattern generatormodel,” inProceedings 2007 IEEE International Conference onRobotics and Automation. IEEE, apr 2007, pp. 262–268. 
 
-[3] Virtual Chassis
+[3] D. Rollinson, A. Buchan, and H. Choset, “Virtual chassis forsnake robots: Definition and applications,”Advanced Robotics,vol. 26, no. 17, pp. 1–22, 2012.
 
-[4] Yang, turning motion
+[4] Changlong Ye, Shugen Ma, Bin Li, and Yuechao Wang, “Turning andside motion of snake-like robot,” inIEEE International Conferenceon Robotics and Automation, 2004. Proceedings. ICRA ’04. 2004,vol. 5, no. January. IEEE, 2004, pp. 5075–5080. 
 
-[5] Neurally
+[5] X. Wu and S. Ma, “Neurally controlled steering for collision-freebehavior of a snake robot,”IEEE Transactions on Control SystemsTechnology, vol. 21, no. 6, pp. 2443–2449, 2013.
 
 #### Note:
 
-This program runs on Windows.
+* This program runs on Windows.
 
-The vrep sence needs to be opened first. But, don't hit the play button. The snake_main_rev.py will activate this sence.
+* The vrep sence needs to be opened first. But, don't hit the play button. The snake_main_rev.py will activate this sence.
