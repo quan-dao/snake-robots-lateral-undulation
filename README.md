@@ -34,7 +34,7 @@ In Fig.3, a circle is a CPG associated with the joint which name is written in i
 </p>
 
 ## Calculate robot's direction of motion
-The direction of lateral undulation gait is the symmetrical line of snakes' body. Using this idea, I calculate the direction of my robot motion by finding the symmetrical line of the sets of center of mass (COM) of my robot's links. This symmetrical line can be found using the SVD on the matrix P [3] defined below.
+The direction of lateral undulation gait is the symmetrical line of snakes' body. Using this idea, I calculate the direction of my robot motion by finding the symmetrical line of the sets of center of mass (COM) of my robot's links. This symmetrical line can be found using the SVD on the matrix P defined below. The eigenvectors resulted by the singular value decomposition of matrix P form a local frame named the Virtual Chassis [3].
 <p align="center"> 
   <img src="https://latex.codecogs.com/gif.latex?P&space;=&space;\begin{bmatrix}&space;x_1&space;-&space;\overline{x}&space;&&space;y_1&space;-&space;\overline{y}&space;\\&space;x_2&space;-&space;\overline{x}&space;&&space;y_2&space;-&space;\overline{y}&space;\\&space;\vdots&space;&&space;\vdots&space;\\&space;x_{N&plus;1}&space;-&space;\overline{x}&space;&&space;y_{N&plus;1}&space;-&space;\overline{y}&space;\\&space;\end{bmatrix}">
 </p>
@@ -47,7 +47,17 @@ Robot crawling direciton can be steered by chaning the symmetrical line of the w
 <p align="center">
   <img src="https://latex.codecogs.com/gif.latex?\phi_i&space;=&space;A&space;\[1&space;&plus;&space;\Delta&space;Asign(\sin(\theta_i))]\sin(\theta_i)">
 </p>
-<p>The reason I used this method is the Linear-Time Invariant (LTI) relationsip between control signal (<img src="https://latex.codecogs.com/gif.latex?\Delta&space;A">) and robot turning angle [4,5]. </p>
+<p>The reason I used this method is the Linear-Time Invariant (LTI) relationsip between the control signal (<img src="https://latex.codecogs.com/gif.latex?\Delta&space;A">) and robot turning angle [4,5]. </p>
+
+## Control scheme
+At this point, I have derived the solution for the first 3 sub problems displayed in Fig.1, so I am going to integrate them into a control scheme to completely solve the direction control problem of snake robots' Lateral Undulation gait. This control scheme is shown in Fig.4.
+<p align="center"> 
+  <img src="https://i.imgur.com/9vSG9R5.png?1">
+</p>
+<p align="center">
+  <em> Fig.4 Direction control scheme </em>
+</p>
+The significace of this control scheme is that it can abstract snake-like robots which have many degrees of freedom as a SISO system. This help us to steer snake robots as easy as steer a differential-drive wheeled vehicle. 
 
 #### References
 [1] Amphibot 1
