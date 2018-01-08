@@ -28,7 +28,7 @@ In Fig.3, a circle is a CPG associated with the joint which name is written in i
 <p align="center"> 
   <img src="https://latex.codecogs.com/gif.latex?\dot{\theta_{j}}&space;=&space;2\pi&space;v&space;&plus;&space;w&space;\sin(\theta_i&space;-&space;\theta_j&space;-\xi)">
 </p>
-<p>In this equation, <img src="https://latex.codecogs.com/gif.latex?\theta_i"> is the phase of CPG i. v, w are respectively frequency parameter and coupling strength. The output of CPG i (<img src="https://latex.codecogs.com/gif.latex?\phi_i">) which is used as the reference of the angular position of joint i is</p>
+<p>In this equation, <img src="https://latex.codecogs.com/gif.latex?\theta_i"> is the phase of CPG i. v, w are respectively frequency parameter and coupling strength. <img src="https://latex.codecogs.com/gif.latex?\xi"> is the phase lag of the connection and is equal to the value written on the arrow representing the connection. The output of CPG i (<img src="https://latex.codecogs.com/gif.latex?\phi_i">) which is used as the reference of the angular position of joint i is</p>
 <p align="center">
   <img src="https://latex.codecogs.com/gif.latex?\phi_i&space;=&space;A&space;\sin(\theta_i)">
 </p>
